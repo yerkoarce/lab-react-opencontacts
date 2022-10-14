@@ -1,70 +1,287 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Root logo](https://imgur.com/Hq8xgzy.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+# LAB | React RootContacts
 
-### `npm start`
+  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Introduction
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  
 
-### `npm test`
+After Root Learn, you have decided to work in the movie industry, and you've found a job where you need to manage the contacts of a famous producer.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  
 
-### `npm run build`
+Your task is to create a contact management app for the producer using React.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  
 
-### `npm run eject`
+- Fork this repo
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Clone this repo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Open the LAB and start:
 
-## Learn More
+  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+$ cd lab-react-rootcontacts
 
-### Code Splitting
+$ npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+$ npm start
 
-### Analyzing the Bundle Size
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  
+  
 
-### Making a Progressive Web App
+## Submission
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  
 
-### Advanced Configuration
+- Upon completion, run the following commands:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  
 
-### Deployment
+```bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+git add .
 
-### `npm run build` fails to minify
+git commit -m "done"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+git push origin master
+
+```
+
+  
+
+- Create a Pull Request so we can check your work.
+
+  
+  
+
+## Getting Started
+
+  
+
+Clean the `App.js` component so that it has the following structure:
+
+  
+
+```jsx
+
+// src/App.js
+
+import  "./App.css";
+
+function App() {
+	return  <div  className="App"></div>;
+}
+
+export  default App;
+
+```
+
+  
+
+## Instructions
+
+  
+
+### Iteration 1 | Display 5 Contacts
+
+  
+
+Let's take a look at the starter code.
+
+  
+
+Inside the `src` folder we have a `contacts.json` file containing the producer's contacts. Import the `contacts.json` file to `App.js`. Once done, create a state variable named `contacts` and store an **array containing the first 5 contacts**.
+
+  
+
+Display that array of 5 contacts as a list in a `<table>` and display the `picture`, `name`, and `popularity` of each contact.
+
+  
+
+For now, let's render the content in `App.js`. This being said, don't proceed to create a dedicated component for the contact list. The reason will become a bit clearer later when we add the delete button next to each contact. You are probably not yet familiar with the concept of "lifting state up" and passing callbacks as props. For this reason, it is better to render everything in one component for the moment.
+
+  
+
+Let's proceed.
+
+  
+
+To import `contacts.json` in `App.js`, you can use:
+
+  
+
+```js
+
+import contacts from  "./contacts.json";
+
+```
+
+  
+
+At the end of this iteration, your application should look like this:
+
+  
+
+<details>
+
+<summary> Check image inside </summary>
+
+  
+
+![Screenshot - Iteration 1](https://imgur.com/LwJOKqZ.png)
+
+  
+
+</details>
+
+  
+
+### Iteration 2 | Conditionally Display Awards Info
+
+  
+
+The producer would like to see the information about the _awards_ that contact has won.
+
+  
+
+Update the list and add two more columns "Won an Oscar" and "Won an Emmy", at the end of the table. Then, depending on the value `wonOscar` and `wonEmmy` of each contact, conditionally render a trophy icon :trophy: or no content.
+
+  
+
+Once done, your application should look like this:
+
+  
+
+<details>
+
+  
+
+<summary>Check image inside</summary>
+
+  
+
+![Screenshot - Iteration 2](https://imgur.com/5nUnS5G.png)
+
+  
+
+</details>
+
+  
+
+### Iteration 3 | Add New Random Contacts
+
+  
+
+In your application, create a _Add Random Contact_ button. Every time you click on this button, it should add a new random contact to the `contacts`. You should get random contacts from the remaining contacts that are still not showing.
+
+  
+
+First, randomly select a contact from the array of remaining contacts. Then add that contact to the array that lives in your state (that's the previously created array of 5 contacts). Do not modify the state directly. Instead, use the state updater function returned from the `useState()`.
+
+  
+
+At the end of this iteration, your website will probably look like this:
+
+  
+
+<details>
+
+<summary> Check image inside </summary>
+
+  
+
+![Screenshot - Iteration 3](https://imgur.com/R7ikfD1.png)
+
+  
+
+</details>
+
+  
+
+### Iteration 4 | Sort Contacts by Name and Popularity
+
+  
+
+The producer asked you to add two new buttons to help them sort their contacts. When you click on one of the buttons, it should **sort the table by `name`** (alphabetically), and when you click the other, it should **sort by `popularity`** (highest first).
+
+  
+
+Once you have sorted the array, remember to update the state variable holding the contacts.
+
+  
+
+This is what you should have at the end of this iteration:
+
+  
+
+<details>
+
+<summary> Check image inside </summary>
+
+  
+
+![Screenshot - Iteration 4](https://imgur.com/ENRbnOg.png)
+
+  
+
+</details>
+
+  
+
+### Iteration 5 | Remove Contacts
+
+  
+
+The producer also would like to remove some of their contacts. Implement a _Delete_ button on each row of your `<table>` that will let the user remove the contact they clicked.
+
+  
+
+When they click, you should get the `id` of that actor and use it to remove the contact from the array. Remember to update the state variable holding the contacts after you remove the contact!
+
+  
+
+When done, your app should look like this (after playing a little bit with the _Delete_ button):
+
+  
+
+<details>
+
+<summary> Check image inside </summary>
+
+  
+
+![Screenshot - Iteration 5](https://imgur.com/9t02WTg.png)
+
+  
+
+</details>
+
+  
+
+### Iteration 6 | Bonus | Styling
+
+  
+
+Unfortunately, this contact list isn't production-ready. We are in the movie business! It has to sparkle! Add some beautiful CSS to make the app "pop".
+
+  
+
+Happy coding! :blue_heart:
