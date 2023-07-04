@@ -2,7 +2,7 @@
 <img src="https://imgur.com/XOS1Vdh.png"  width="150px" height="150px">
 
 
-# LAB | React RootContacts
+# LAB | React OpenContacts
 
   
 
@@ -10,7 +10,7 @@
 
   
 
-After Root Learn, you have decided to work in the movie industry, and you've found a job where you need to manage the contacts of a famous producer.
+After Open Bootcamp, you have decided to work in the movie industry, and you've found a job where you need to manage the contacts of a famous producer.
 
   
 
@@ -36,7 +36,7 @@ Your task is to create a contact management app for the producer using React.
 
 ```bash
 
-$ cd lab-react-rootcontacts
+$ cd lab-react-opencontacts
 
 $ npm install
 
