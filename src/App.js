@@ -34,11 +34,32 @@ function App() {
     setDisplayContacts([...displayContacts, newRandomContact])
   }
 
+  const handlerSortByAlphabet = () => {
+    setDisplayContacts([...displayContacts].sort((a,b) => a.name.localeCompare(b.name)))
+  }
+
+  const handlerSortByPopularity = () => {
+    setDisplayContacts([...displayContacts].sort((a,b) => b.popularity - a.popularity))
+  }
+
+  const handlerRemoveContact = (id) => {
+    setDisplayContacts([...displayContacts].filter(contact => contact.id !== id))
+  }
+
   return (
     <div className="App">
       <button
         onClick={handlerAddRandomContact}
-        >Add a random contact</button>
+        >Add a random contact
+      </button>
+      <button
+        onClick={handlerSortByAlphabet}
+        >Sort by name
+      </button>
+      <button
+        onClick={handlerSortByPopularity}
+        >Sort by popularity
+      </button>
       <table style={{borderCollapse: 'collapse'}}>
         <thead>
           <tr>
@@ -47,6 +68,7 @@ function App() {
             <th>Popularity</th>
             <th>Won Oscar</th>
             <th>Won Emmy</th>
+            <th>Remove</th>
           </tr>
         </thead>
         <tbody>
@@ -58,6 +80,9 @@ function App() {
                 <td>{contact.popularity.toFixed(2)}</td>
                 <td>{contact.wonOscar ? '🏆' : ''}</td>
                 <td>{contact.wonEmmy ? '🏆' : ''}</td>
+                <td><button onClick={() => handlerRemoveContact(contact.id)}>
+                  Remove
+                </button></td>
               </tr>
             )
           })}
